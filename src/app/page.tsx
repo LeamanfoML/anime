@@ -77,7 +77,7 @@ export default function Home() {
       try {
         const response = await axios.get('https://api.anilibria.tv/v3/title/updates?limit=12')
         const trendingData = response.data.list?.map((item: any) => ({
-          id: `trending_${'''item.id'''}`,
+          id: `trending_${item.id}`,
           title: item.names?.ru || item.names?.en,
           poster: item.posters?.original?.url ? `https://anilibria.tv${item.posters.original.url}` : '/placeholder.jpg',
           rating: item.rating?.rating,

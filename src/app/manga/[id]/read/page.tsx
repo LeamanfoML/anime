@@ -1,3 +1,4 @@
+'use client';
 import { trendingManga, newManga } from '@/lib/mock-data';
 import Image from 'next/image';
 import Link from 'next/link';

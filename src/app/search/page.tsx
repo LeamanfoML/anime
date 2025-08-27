@@ -36,7 +36,7 @@ function SearchContent() {
       const response = await axios.get(`https://api.anilibria.tv/v3/title/search?search=${encodeURIComponent(searchTerm)}&limit=50`)
       
       const searchResults = response.data.list?.map((item: any) => ({
-        id: `anilibria_${'''item.id'''}`,
+        id: `anilibria_${item.id}`,
         title: item.names?.ru || item.names?.en,
         poster: item.posters?.original?.url ? `https://anilibria.tv${item.posters.original.url}` : '/placeholder.jpg',
         rating: item.rating?.rating,

@@ -25,7 +25,7 @@ export async function GET(request: NextRequest) {
     const data = await response.json()
     
     const results = data.list?.map((item: any) => ({
-      id: `anilibria_${'''item.id'''}`,
+      id: `anilibria_${item.id}`,
       title: item.names?.ru || item.names?.en,
       poster: item.posters?.original?.url ? `https://anilibria.tv${item.posters.original.url}` : null,
       rating: item.rating?.rating,
