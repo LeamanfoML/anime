@@ -33,7 +33,7 @@ export default function Home() {
       const response = await axios.get(`https://api.anilibria.tv/v3/title/search?search=${encodeURIComponent(query)}&limit=20`)
       
       const results = response.data.list?.map((item: any) => ({
-        id: `anilibria_${${item.id}}`,
+        id: `anilibria_{item.id}`,
         title: item.names?.ru || item.names?.en || 'Без названия',
         poster: item.posters?.original?.url ? `https://anilibria.tv${item.posters.original.url}` : '/placeholder.jpg',
         rating: item.rating?.rating || 0,
